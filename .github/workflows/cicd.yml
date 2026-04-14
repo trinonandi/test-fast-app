@@ -25,6 +25,11 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Lint
+        run: |
+          uv pip install ruff
+          uv run ruff check .
+
       - name: Run tests
         run: |
           export PYTHONPATH=.
