@@ -9,4 +9,4 @@ def health():
 
 @app.get("/")
 def core():
-    return {"message": "This is the core endpoint"}
+    return {"message": "This is the core endpoint 2.0"}
