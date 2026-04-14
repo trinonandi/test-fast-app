@@ -23,17 +23,15 @@ jobs:
         uses: astral-sh/setup-uv@v3
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --extra dev
 
       - name: Lint
-        run: |
-          uv pip install ruff
-          uv run ruff check .
+        run: uv run --extra dev ruff check .
 
       - name: Run tests
         run: |
           export PYTHONPATH=.
-          uv run pytest
+          uv run --extra dev pytest
 
   deploy:
     needs: test
