@@ -12,5 +12,5 @@ def test_health_returns_message() -> None:
 
 def test_unknown_path_is_404() -> None:
     client = TestClient(app)
-    resp = client.get("/")
+    resp = client.get("/does-not-exist")
     assert resp.status_code == 404
